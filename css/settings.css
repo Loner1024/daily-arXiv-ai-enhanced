@@ -1,393 +1,212 @@
-/* 设置页面专用样式 */
+/* ============================================================
+   Settings page · Kami
+   ============================================================ */
+
 .settings-page {
-  padding: 24px;
-  max-width: 800px;
-  margin: 0 auto;
+  width: 100%;
+  padding: 40px 24px 80px;
 }
 
 .settings-container {
+  max-width: 820px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
 .settings-header {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
 .settings-header h1 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 30px;
+  color: var(--near-black);
+  margin-bottom: 6px;
 }
 
 .settings-header p {
-  color: var(--text-secondary);
-  font-size: 16px;
+  color: var(--olive);
+  font-size: 15px;
+  margin: 0;
 }
 
 .settings-content {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 18px;
 }
 
 .settings-section {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-}
-
-.settings-section h2 {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--text-color);
-  margin-bottom: 8px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.settings-card {
-  background-color: var(--card-bg-color);
-  border-radius: var(--radius-md);
-  padding: 20px;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border-color);
-}
-
-.settings-item {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.settings-item:last-child {
-  margin-bottom: 0;
-}
-
-.settings-item label {
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--text-secondary);
-}
-
-.back-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  border-radius: var(--radius-sm);
-  color: var(--text-color);
-  font-size: 14px;
-  font-weight: 500;
-  transition: var(--transition);
-  text-decoration: none !important;
-}
-
-.back-button:hover {
-  background-color: var(--background-hover);
-  text-decoration: none !important;
-}
-
-.back-button svg {
-  color: var(--primary-color);
-}
-
-.tag-selector {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-}
-
-.selected-tags {
-  display: flex;
-  flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 12px;
-  min-height: 40px;
-  padding: 8px;
-  background-color: rgba(248, 250, 252, 0.5);
-  border-radius: var(--radius-md);
-  border: 1px dashed var(--border-color);
-}
-
-.selected-tags .category-tag {
-  display: inline-flex;
-  align-items: center;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-  color: var(--primary-color);
-  border-radius: 16px;
-  padding: 6px 14px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(102, 126, 234, 0.2);
-}
-
-.selected-tags .category-tag:hover {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
-  transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.remove-tag {
-  background: none;
-  border: none;
-  color: var(--primary-color);
-  font-size: 16px;
-  margin-left: 6px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-  opacity: 0.7;
-}
-
-.remove-tag:hover {
-  color: #ef4444;
-  opacity: 1;
-  transform: scale(1.1);
-}
-
-.tag-input-container {
-  display: flex;
-  gap: 8px;
-  position: relative;
-}
-
-.settings-input {
-  padding: 10px 14px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-color);
-  background-color: var(--input-bg-color, #fff);
-  color: var(--text-color);
-  font-size: 14px;
-  transition: all 0.2s ease;
-  width: 100%;
-  outline: none;
-}
-
-.settings-input:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
-}
-
-.settings-input::placeholder {
-  color: var(--text-secondary);
-  opacity: 0.7;
-}
-
-.add-tag-button {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color, #764ba2) 100%);
-  color: white;
-  border: none;
-  border-radius: var(--radius-md);
-  padding: 10px 16px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  min-width: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.add-tag-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.add-tag-button:active {
-  transform: translateY(1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .keyword-section-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--border-color);
+  gap: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
 }
 
 .keyword-section-title-left {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--near-black);
 }
 
-.keyword-section-title svg {
-  width: 24px;
-  height: 24px;
-  color: var(--primary-color);
-  flex-shrink: 0;
+.keyword-section-title-left svg {
+  color: var(--brand);
 }
 
 .copy-button {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 6px;
   padding: 6px 12px;
-  border-radius: var(--radius-sm);
-  background-color: rgba(100, 116, 139, 0.1);
-  color: var(--text-secondary);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border);
+  background: var(--ivory);
+  color: var(--dark-warm);
+  font-family: var(--serif);
   font-size: 13px;
-  font-weight: 500;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition);
 }
 
 .copy-button:hover {
-  background-color: var(--primary-color);
-  color: white;
-  border-color: var(--primary-color);
-  transform: translateY(-1px);
+  background: var(--warm-sand);
+  color: var(--brand);
 }
 
-.copy-button:active {
-  transform: translateY(1px);
+.settings-card {
+  background: var(--ivory);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 18px 20px;
 }
 
-.copy-button svg {
-  width: 16px;
-  height: 16px;
-  color: inherit;
+.settings-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tag-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.selected-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 36px;
 }
 
 .empty-tag-message {
-  color: var(--text-secondary);
+  color: var(--stone);
   font-size: 14px;
-  font-style: italic;
-  text-align: center;
-  padding: 10px;
-  opacity: 0.7;
+  padding: 8px 2px;
 }
 
-/* 标签动画效果 */
-.tag-appear {
-  animation: tagAppear 0.3s ease;
+.tag-input-container {
+  display: flex;
+  gap: 8px;
 }
 
-.tag-disappear {
-  animation: tagDisappear 0.3s ease forwards;
+.settings-input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--parchment);
+  color: var(--near-black);
+  font-family: var(--serif);
+  font-size: 15px;
+  outline: none;
+  transition: var(--transition);
 }
 
-.tag-highlight {
-  animation: tagHighlight 1s ease;
+.settings-input:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px var(--border-accent);
 }
 
-@keyframes tagAppear {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.add-tag-button {
+  padding: 8px 18px;
+  border: 1px solid var(--brand);
+  background: var(--brand);
+  color: var(--ivory);
+  font-family: var(--serif);
+  font-size: 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
 }
 
-@keyframes tagDisappear {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
+.add-tag-button:hover {
+  background: var(--ink-light);
+  border-color: var(--ink-light);
 }
 
-@keyframes tagHighlight {
-  0% {
-    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
-  }
-  50% {
-    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.4);
-  }
-  100% {
-    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
-  }
+.remove-tag {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0 0 2px;
+  opacity: 0.65;
 }
 
-/* 覆盖默认按钮样式 */
+.remove-tag:hover {
+  opacity: 1;
+}
+
 .settings-actions {
   display: flex;
   justify-content: flex-end;
-  gap: 12px;
-  margin-top: 24px;
+  gap: 10px;
+  margin-top: 8px;
 }
 
-.settings-actions button {
-  padding: 10px 20px;
-  border-radius: var(--radius-md);
+.settings-notification {
+  font-family: var(--serif);
   font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border: none;
 }
 
-.settings-actions button.primary {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color, #764ba2) 100%);
-  color: white;
-}
+/* Responsive */
 
-.settings-actions button:not(.primary) {
-  background-color: rgba(100, 116, 139, 0.1);
-  color: var(--text-color);
-}
-
-.settings-actions button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.settings-actions button:active {
-  transform: translateY(1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .settings-page {
-    padding: 16px;
+    padding: 24px 16px 48px;
   }
-  
-  .settings-item {
-    flex-direction: column;
+
+  .settings-header h1 {
+    font-size: 26px;
+  }
+
+  .keyword-section-title {
     align-items: flex-start;
-    gap: 8px;
   }
-  
-  .settings-input, 
-  .tag-selector,
-  .range-selector {
-    width: 100%;
-  }
-  
+
   .settings-actions {
     flex-direction: column-reverse;
-    gap: 12px;
   }
-  
-  .settings-actions button {
+
+  .settings-actions .button {
     width: 100%;
   }
-} 
+}
